@@ -913,6 +913,15 @@ body.light-theme{
     resize: none;
 }
 
+/* Partie contact message */
+.contact__message{
+    position: absolute;
+    left: 0;
+    bottom: 4.5rem;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+}
+
 /*========== FOOTER ==========*/
 .footer{
     background-color: var(--first-color);
