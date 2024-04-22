@@ -69,6 +69,37 @@ function activeWork(){
 
 linkWork.forEach(l=> l.addEventListener('click', activeWork))
 
+
+/*========== VEILLE ACCORDION ==========*/
+const accordionItems = document.querySelectorAll('.value__accordion-item')
+
+accordionItems.forEach((item) =>{
+    const accordionHeader = item.querySelector('.value__accordion-header')
+
+    accordionHeader.addEventListener('click', () =>{
+        const openItem = document.querySelector('.accordion-open')
+
+        toggleItem(item)
+
+        if(openItem && openItem!==item){
+            toggleItem(openItem)
+        }
+    })
+})
+
+const toggleItem = (item) =>{
+    const accordionContent = item.querySelector('.value__accordion-content')
+
+    if(item.classList.contains('accordion-open')){
+        accordionContent.removeAttribute('style')
+        item.classList.remove('accordion-open') 
+    }else{
+        accordionContent.style.height = accordionContent.scrollHeight + 'px'
+        item.classList.add('accordion-open')
+    }
+}
+
+
 /*========== SWIPER TESTIMONIAL ==========*/
 let swiperTestimonial = new Swiper(".testimonial__container", {
     spaceBetween: 24,
@@ -152,6 +183,10 @@ const sr = ScrollReveal({
 sr.reveal('.home__data')
 sr.reveal('.home__handle', {delay: 700})
 sr.reveal('.home__social, .home__scroll', {delay: 900, origin: 'bottom'})
+
+/* Veille Techno */
+sr.reveal('.value__images', {origin: 'left'})
+sr.reveal('.value__content', {origin: 'right'})
 
 /*========== EMAIL JS ==========*/
 const contactForm = document.getElementById('contact-form'),
