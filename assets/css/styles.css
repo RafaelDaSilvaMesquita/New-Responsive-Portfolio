@@ -872,8 +872,12 @@ body.light-theme{
     transition: all .25s ease;
 }
 
-.accordion__open{
+.accordion-open{
     box-shadow: 0 4px 4px hsla(0, 0%, 4%, .3);
+}
+
+.accordion-open .value__accordion-arrow i{
+    transform: rotate(-180deg);
 }
 
 
